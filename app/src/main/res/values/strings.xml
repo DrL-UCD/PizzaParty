@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Pizza Party</string>
+    <string name="childRadioButtonText">Children</string>
+    <string name="pizzaImageText">This is a picture of a Pizza.</string>
+    <string name="hintNumber">Enter Number of Guests</string>
+    <string name="guestType">Select Type of Guests</string>
+    <string name="teenagerRadioText">Teenagers</string>
+    <string name="adultsRadioButton">Adults</string>
+    <string name="resultText">Number of Pizza</string>
+    <string name="costText">Total Cost</string>
+    <string name="clearText">Clear</string>
+    <string name="calculateText">Calculate</string>
+</resources>
