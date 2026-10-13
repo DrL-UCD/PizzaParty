@@ -10,4 +10,9 @@
     <string name="costText">Total Cost</string>
     <string name="clearText">Clear</string>
     <string name="calculateText">Calculate</string>
+    <string name="clearDialogTitle">Clear Form</string>
+    <string name="message">Are you sure you want to clear the form"</string>
+    <string name="positive">Yes</string>
+    <string name="negative">No</string>
+    <string name="okButton">OK</string>
 </resources>
