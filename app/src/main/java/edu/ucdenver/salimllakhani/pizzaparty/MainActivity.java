@@ -1,5 +1,6 @@
 package edu.ucdenver.salimllakhani.pizzaparty;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -60,37 +61,37 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        binding.radioGroup.setOnCheckedChangeListener (
-                new RadioGroup.OnCheckedChangeListener() {
-
-
-                    @Override
-                    public void onCheckedChanged(@NonNull RadioGroup radioGroup, int i) {
-                        calculate();
-
-                    }
-                }
-        );
-
-        binding.editTextNumber.addTextChangedListener (
-                new TextWatcher() {
-
-                    @Override
-                    public void afterTextChanged(Editable editable) {
-
-                    }
-
-                    @Override
-                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                            calculate();
-                    }
-                }
-        );
+//        binding.radioGroup.setOnCheckedChangeListener (
+//                new RadioGroup.OnCheckedChangeListener() {
+//
+//
+//                    @Override
+//                    public void onCheckedChanged(@NonNull RadioGroup radioGroup, int i) {
+//                        calculate();
+//
+//                    }
+//                }
+//        );
+//
+//        binding.editTextNumber.addTextChangedListener (
+//                new TextWatcher() {
+//
+//                    @Override
+//                    public void afterTextChanged(Editable editable) {
+//
+//                    }
+//
+//                    @Override
+//                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                            calculate();
+//                    }
+//                }
+//        );
 
 //        editTextNumber = findViewById(R.id.editTextNumber);
 //        radioButtonChild = findViewById(R.id.radioButtonChild);
@@ -159,8 +160,21 @@ public class MainActivity extends AppCompatActivity {
 
             cost = result * 13.99;
 
-            binding.textViewResult.setText(getResources().getString(R.string.resultText) + ": " + decimalFormat.format(result));
-            binding.textViewCost.setText(getResources().getString(R.string.costText) + ": " + currencyFormat.format(cost));
+//            String title = "Result";
+//            String message = "Number of Pizza: " + result;
+//            String positive = getResources().getString(R.string.positive);
+//            String negative = getResources().getString(R.string.negative);
+//            ClearFormDialog clearFormDialog = new ClearFormDialog(title, message, positive, negative);
+//
+//            clearFormDialog.show(getSupportFragmentManager(), "");
+            Intent resultActivity = new Intent(this, ResultActivity.class);
+            resultActivity.putExtra("result", getResources().getString(R.string.resultText) + ": " + decimalFormat.format(result));
+            resultActivity.putExtra("cost", getResources().getString(R.string.costText) + ": " + currencyFormat.format(cost));
+            startActivity (resultActivity);
+
+
+//            binding.textViewResult.setText(getResources().getString(R.string.resultText) + ": " + decimalFormat.format(result));
+//            binding.textViewCost.setText(getResources().getString(R.string.costText) + ": " + currencyFormat.format(cost));
         }
         catch (NumberFormatException ex) {
             Toast.makeText(this, "Input must be an integer", Toast.LENGTH_LONG).show();
